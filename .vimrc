@@ -1,6 +1,6 @@
 so ~/.vim/plugins.vim           " source plugins.vim file
 let &t_ut='' "For kitty
-colorscheme gruvbox
+colorscheme dracula
 set encoding=utf-8
 set background=dark
 let mapleader = ","
@@ -27,6 +27,7 @@ set lbr
 set tw=500
 "enable vim status line
 "let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 let g:airline_theme='minimalist'
 set ai "Auto indent
 set si "Smart indent
@@ -218,6 +219,7 @@ let g:fzf_layout = { 'down': '~40%' }
 silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 
 nmap <C-n> :NERDTreeToggle<cr>
+let g:NERDTreeBookmarksFile = "~/.vim/bundle/nerdtree/bookmarks"
 
 
 "------------------------------Auto-commands------------------------------"

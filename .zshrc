@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/minsan/.oh-my-zsh
+  export ZSH=/home/min/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -51,12 +51,10 @@ ZSH_THEME="cloud"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rails bundler tmuxinator git-flow zsh-autosuggestions zsh-syntax-highlighting web-search)
+plugins=(git bundler tmuxinator git-flow zsh-autosuggestions zsh-syntax-highlighting web-search)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -86,34 +84,46 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #add alises file
 export LANG=en_US.UTF-8
-alias ssh:staging="ey ssh -e cars_staging5"
-alias deploy:staging="ey deploy -e cars_staging5"
+#alias ssh:staging="ey ssh -e cars_staging5"
+#alias deploy:staging="ey deploy -e cars_staging5"
 export EDITOR="vim"
 if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
 
-#for rvm
-export PATH="$PATH:$HOME/.rvm/bin"
-source "$HOME/.rvm/scripts/rvm"
 #for tmuxnitator
-source ~/.bin/tmuxinator.zsh
+#source ~/.bin/tmuxinator.zsh
 
 
-source /home/minsan/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-export PATH=/home/minsan/anaconda3/bin:$PATH
+#export PATH=/home/min/anaconda3/bin:$PATH
 #export PATH=$HOME/.cargo/bin
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-#for kitty
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+alias robomongo='/usr/local/bin/robomongo/bin/robo3t'
 autoload -Uz compinit
 compinit
-# Completion for kitty
-kitty + complete setup zsh | source /dev/stdin
-fpath=( "$HOME/.zfunctions" $fpath )
-autoload -U promptinit; promptinit
-prompt pure
+DISABLE_AUTO_TITLE=true
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/min/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/min/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/min/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/min/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+export PATH="/home/sammy/anaconda3/bin:$PATH"
+
+[[ -s "/home/min/.gvm/scripts/gvm" ]] && source "/home/min/.gvm/scripts/gvm"
+export GOPATH=$HOME/code/go

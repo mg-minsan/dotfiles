@@ -37,5 +37,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'kchmck/vim-coffee-script'
+Plug 'elixir-editors/vim-elixir'
 "vim snippet
 call plug#end()
