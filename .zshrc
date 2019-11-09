@@ -51,7 +51,7 @@ ZSH_THEME="cloud"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git bundler tmuxinator git-flow zsh-autosuggestions zsh-syntax-highlighting web-search)
+plugins=(git bundler tmuxinator rails git-flow zsh-autosuggestions zsh-syntax-highlighting web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -127,3 +127,7 @@ export PATH="/home/sammy/anaconda3/bin:$PATH"
 
 [[ -s "/home/min/.gvm/scripts/gvm" ]] && source "/home/min/.gvm/scripts/gvm"
 export GOPATH=$HOME/code/go
+export DB_PASS=pass
+export DB_USER=min
+export DB_NAME=pay
+
