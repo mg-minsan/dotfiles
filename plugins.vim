@@ -19,6 +19,7 @@ Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-haml'
 Plug 'ngmy/vim-rubocop'
 Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-endwise'
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/vim-github-dashboard'
 Plug 'SirVer/ultisnips'
@@ -38,5 +39,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'kchmck/vim-coffee-script'
 Plug 'elixir-editors/vim-elixir'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 "vim snippet
 call plug#end()
