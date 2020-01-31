@@ -5,8 +5,9 @@ set encoding=utf-8
 set background=dark
 let mapleader = ","
 let g:mapleader = ","
+let g:coc_global_extensions = ['coc-solargraph']
 "for git commit
-autocmd Filetype gitcommit setlocal spell textwidth=72
+"autocmd Filetype gitcommit setlocal spell textwidth=72
 "ruby specific
 set expandtab
 set tabstop=2
@@ -15,7 +16,8 @@ set shiftwidth=2
 " Make it obvious where 80 characters is
 set textwidth=80
 set colorcolumn=+1
-set noswapfile
+set swapfile
+set dir=/tmp
 " Numbers
 set number
 set numberwidth=5
@@ -39,6 +41,17 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" for language server
+let g:LanguageClient_serverCommands = {
+      \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
+    \ }
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+set signcolumn=yes 
 " Tab completion
 " will insert tab at beginning of line,
 " will use completion if not at beginning
@@ -219,9 +232,7 @@ let g:fzf_layout = { 'down': '~40%' }
 silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 
 nmap <C-n> :NERDTreeToggle<cr>
-let g:NERDTreeBookmarksFile = "~/.vim/bundle/nerdtree/bookmarks"
-
-
+let g:NERDTreeBookmarksFile = $HOME ."/.vim/bookmarks"
 "------------------------------Auto-commands------------------------------"
 "Automatically source vimrc after save
 augroup autosourcing
@@ -229,7 +240,16 @@ augroup autosourcing
 	autocmd BufWritePost .vimrc source %
 augroup END
 
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 
 
