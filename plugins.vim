@@ -1,47 +1,72 @@
 call plug#begin('~/.vim/plugged')
-Plug 'junegunn/vim-easy-align'
-Plug 'VundleVim/Vundle.vim'
-"Plug 'kien/ctrlp.vim'
-Plug 'tpope/vim-vinegar'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-surround'
-Plug 'Valloric/MatchTagAlways'
-Plug 'scrooloose/syntastic'
-Plug 'tpope/vim-fugitive'
-Plug 'ervandew/supertab'
-Plug 'posva/vim-vue'
-Plug 'nelstrom/vim-textobj-rubyblock'
-Plug 'kana/vim-textobj-user'
-Plug 'tpope/vim-rails'
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-haml'
-Plug 'ngmy/vim-rubocop'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-endwise'
-Plug 'junegunn/seoul256.vim'
-Plug 'junegunn/vim-github-dashboard'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'SirVer/ultisnips'
-Plug 'tpope/vim-commentary'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-Plug 'bronson/vim-trailing-whitespace'
+plug 'junegunn/vim-easy-align'
+plug 'vundlevim/vundle.vim'
+"plug 'kien/ctrlp.vim'
+plug 'tpope/vim-vinegar'
+plug 'scrooloose/nerdtree'
+plug 'scrooloose/nerdcommenter'
+plug 'tpope/vim-surround'
+plug 'valloric/matchtagalways'
+plug 'scrooloose/syntastic'
+plug 'tpope/vim-fugitive'
+"plug 'ervandew/supertab'
+plug 'posva/vim-vue'
+plug 'nelstrom/vim-textobj-rubyblock'
+plug 'kana/vim-textobj-user'
+plug 'tpope/vim-rails'
+plug 'vim-ruby/vim-ruby'
+plug 'tpope/vim-bundler'
+plug 'tpope/vim-haml'
+plug 'ngmy/vim-rubocop'
+plug 'tpope/vim-dispatch'
+plug 'tpope/vim-endwise'
+plug 'junegunn/seoul256.vim'
+plug 'junegunn/vim-github-dashboard'
+plug 'sirver/ultisnips'
+plug 'honza/vim-snippets'
+plug 'sirver/ultisnips'
+plug 'tpope/vim-commentary'
+plug 'junegunn/goyo.vim'
+plug 'junegunn/limelight.vim'
+plug 'bronson/vim-trailing-whitespace'
 "fzf
-Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
-Plug 'junegunn/fzf.vim'
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'kchmck/vim-coffee-script'
-Plug 'elixir-editors/vim-elixir'
-Plug 'autozimu/LanguageClient-neovim', {
+plug 'junegunn/fzf', { 'dir': '~/.fzf' }
+plug 'junegunn/fzf.vim'
+plug 'godlygeek/tabular'
+plug 'plasticboy/vim-markdown'
+plug 'vim-airline/vim-airline'
+plug 'vim-airline/vim-airline-themes'
+plug 'mustache/vim-mustache-handlebars'
+plug 'kchmck/vim-coffee-script'
+plug 'elixir-editors/vim-elixir'
+plug 'kylef/apiblueprint'
+plug 'neoclide/coc.nvim', {'branch': 'release'}
+plug 'elmcast/elm-vim'
+plug 'othree/yajs.vim'
+plug 'mxw/vim-jsx'
+plug 'autozimu/languageclient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
 "vim snippet
+"
+plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'branch': 'release/1.x',
+  \ 'for': [
+    \ 'javascript',
+    \ 'typescript',
+    \ 'css',
+    \ 'less',
+    \ 'scss',
+    \ 'json',
+    \ 'graphql',
+    \ 'markdown',
+    \ 'vue',
+    \ 'lua',
+    \ 'php',
+    \ 'python',
+    \ 'ruby',
+    \ 'html',
+    \ 'swift' ] }
 call plug#end()
