@@ -127,7 +127,3 @@ export PATH="/home/sammy/anaconda3/bin:$PATH"
 
 [[ -s "/home/min/.gvm/scripts/gvm" ]] && source "/home/min/.gvm/scripts/gvm"
 export GOPATH=$HOME/code/go
-export DB_PASS=pass
-export DB_USER=min
-export DB_NAME=pay
-
